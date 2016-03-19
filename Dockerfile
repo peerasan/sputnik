@@ -1,21 +1,40 @@
-# Teradek Sputnik
+#Teradek Sputnik v2.4.4
+#New Features
+#
+#    None
+#
+#Changes and Improvements
+#
+#    Disabled non-local Redis connections
+#
+#Bug Fixes
+#
+#    YouTube Stream Now did not work
+#    RTMP broadcast could fail to start if server messages were received in the wrong order
+#    RTMP Auto-reconnect did not work
 #
 # Docs:
 # http://cdn.teradek.com/Public/Sputnik/Docs/Teradek_Sputnik_Setup_Guide_v2_0512.pdf
+
+
+
+FROM debian:jessie
+MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
 # Fork from texastribune/sputnik
 
-FROM debian:squeeze
-MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
-
-
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL description="Teradek sputnik for Teradek BondII (3G Bonding)"
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -qq
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq libc6-i386 lib32stdc++6 lib32z1
+# change repo
+RUN sed -i -e "s/httpredir.debian.org/mirror.kku.ac.th/g" /etc/apt/sources.list
+
+RUN apt-get update; apt-get upgrade -y;
+RUN apt-get install -y libc6-i386 lib32stdc++6 lib32z1 lib32gcc1
 # http://teradek.com/pages/downloads#sputnik see the link for the 64b .deb
-ADD http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.4.x/2.4.3/teradek-sputnik_2.4.3.r25619_amd64.deb /tmp/teradek-sputnik.deb
-RUN DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/teradek-sputnik.deb
+ADD http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.4.x/2.4.4/teradek-sputnik_2.4.4.r25807_amd64.deb /tmp/teradek-sputnik.deb
+RUN dpkg -i /tmp/teradek-sputnik.deb
+
 
 # Create volume friendly data directory
 RUN mkdir -p /data/conf
@@ -26,6 +45,7 @@ VOLUME ["/data/"]
 # WISHLIST how to get sputnik logs into /data ?
 VOLUME ["/var/log/"]
 
+
 # listening
 EXPOSE 5111
 # web server
@@ -34,4 +54,5 @@ EXPOSE 1957
 EXPOSE 554
 
 ADD start.sh /start.sh
+RUN chmod +x /start.sh
 CMD ["/start.sh"]

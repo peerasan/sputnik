@@ -22,6 +22,11 @@ MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
 # Fork from texastribune/sputnik
 
 LABEL version="1.2"
+=======
+FROM debian:jessie
+MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
+# Fork from texastribune/sputnik
+
 LABEL description="Teradek sputnik for Teradek BondII (3G Bonding)"
 ENV DEBIAN_FRONTEND noninteractive
 

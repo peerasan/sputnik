@@ -22,7 +22,6 @@ MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
 # Fork from texastribune/sputnik
 
 LABEL version="1.2"
-=======
 FROM debian:jessie
 MAINTAINER Peerasan Buranasanti (Patrickz) <peerasan@gmail.com>
 # Fork from texastribune/sputnik

@@ -35,3 +35,12 @@ Here are some examples of how you could use this image.
    - fix: Could not stream to Limewire CDN
    - fix: Fixed checking for Core Client updates via dashboard
 
+Download (64 bit only)
+-----
+Binary version 2.5.2
+- RPM: http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.5.x/2.5.2/teradek-sputnik_2.5.2.r26587_amd64.deb
+- deb: http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.5.x/2.5.2/teradek-sputnik-2.5.2-r26587.el6.i686.rpm
+
+Binary version 2.5.1
+- RPM: http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.5.x/2.5.1/teradek-sputnik-2.5.1-r26493.el6.i686.rpm
+- deb: http://update.teradek.com/download.php?file=/Teradek/Sputnik/Software/Releases/2.5.x/2.5.1/teradek-sputnik_2.5.1.r26493_amd64.deb.rpm

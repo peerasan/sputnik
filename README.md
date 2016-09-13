@@ -11,6 +11,14 @@ Here are some examples of how you could use this image.
 
 
 ### changelogs
+2016-09-13
+ - upgrade sputink to version 2.5.2
+   - added: Facebook events and pages integration with Core
+   - added: Updated Livestream streaming endpoint URL
+   - added: Core user name is displayed after logging in through Sputnik dashboard
+   - fix: Sputnik configuration settings were written incorrectly when shorter than previous values
+
+
 2016-03-19
  - migrate from debian:squeeze to debian:jessie
  - upgrade sputink to version 2.4.4
